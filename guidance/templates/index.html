@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance System</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <h1>Career Guidance System</h1>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    background: white;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+h2 {
+    color: #555;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    font-size: 16px;
+}
+</style>
+    <form action="/predict" method="post">
+        <h2>Answer the following questions on a scale of 1-10:</h2>
+        <label>Interest in Technology: <input type="number" name="question1" min="1" max="10" required></label><br>
+        <label>Interest in Medical Science: <input type="number" name="question2" min="1" max="10" required></label><br>
+        <label>Interest in Business & Management: <input type="number" name="question3" min="1" max="10" required></label><br>
+        <label>Creativity & Arts: <input type="number" name="question4" min="1" max="10" required></label><br>
+        <label>Interest in Science & Research: <input type="number" name="question5" min="1" max="10" required></label><br>
+        <label>Interest in Law & Public Policy: <input type="number" name="question6" min="1" max="10" required></label><br>
+        
+        <h2>Rate the student's suitability for different fields (1-10):</h2>
+        <label>Tech: <input type="number" name="feedback1" min="1" max="10" required></label><br>
+        <label>Medical: <input type="number" name="feedback2" min="1" max="10" required></label><br>
+        <label>Business: <input type="number" name="feedback3" min="1" max="10" required></label><br>
+        <label>Arts: <input type="number" name="feedback4" min="1" max="10" required></label><br>
+        <label>Science: <input type="number" name="feedback5" min="1" max="10" required></label><br>
+        <label>Law: <input type="number" name="feedback6" min="1" max="10" required></label><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
